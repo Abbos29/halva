@@ -1,5 +1,6 @@
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 body.locked nav {
   -webkit-backdrop-filter: none;
@@ -46,6 +47,7 @@ nav {
           backdrop-filter: blur(10px);
   position: relative;
   z-index: 3;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 
 .navbar {
@@ -177,11 +179,37 @@ nav {
   }
 }
 .hero {
+  padding-top: 80px;
+  position: relative;
   /* .hero__box */
   /* .hero__title */
   /* .hero__text */
   /* .hero__btn */
   /* .hero__img */
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 530px;
+  height: 1000px;
+  z-index: -3;
+  background-image: url(../img/hero-after.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 530px;
+  height: 1000px;
+  z-index: -3;
+  background-image: url(../img/hero-before.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero__box {
   max-width: 900px;
@@ -473,13 +501,40 @@ nav {
 }
 
 .card {
-  margin-bottom: 100px;
+  overflow-y: hidden;
+  padding: 70px 0;
+  background: #FAFAFA;
+  position: relative;
   /* .card__wrapper */
   /* .card__box */
   /* .card__title */
   /* .card__text */
   /* .card__btn */
   /* .card__img */
+}
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/box-after.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/box-before.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 .card__wrapper {
   display: flex;
